@@ -5,71 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Nibhas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #mobile-menu { transition: all 0.3s ease-in-out; }
+        .hidden-menu { max-height: 0; opacity: 0; overflow: hidden; }
+        .show-menu { max-height: 300px; opacity: 1; padding-bottom: 1rem; }
+    </style>
 </head>
-<body>
-    <!-- Use same Nav as index.html -->
-       <!-- Navigation -->
-    <nav class="flex items-center justify-between px-10 py-4 bg-white shadow-sm sticky top-0 z-50">
-        <div class="flex items-center">
-            <img src="https://via.placeholder.com/150x50?text=NIBHAS+LOGO" alt="Nibhas Logo" class="h-12">
+
+<body class="bg-white text-gray-800">
+    <nav class="bg-white shadow-sm sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center">
+                <img src="https://via.placeholder.com/150x50?text=NIBHAS+LOGO" alt="Nibhas Logo" class="h-10 md:h-12">
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-gray-600">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="about.html" class="hover:text-blue-600">About</a>
+                <a href="services.html" class="hover:text-blue-600">Services</a>
+                <a href="contact.html" class="text-blue-600 border-b-2 border-blue-600">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-        <div class="hidden md:flex space-x-8 font-medium text-gray-600">
-            <a href="index.html" class="hover:text-blue-600">Home</a>
-            <a href="#about" class="hover:text-blue-600">About</a>
-            <a href="services.html" class="hover:text-blue-600">Services</a>
-            <a href="contact.html" class="text-blue-600 border-b-2 border-blue-600">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden-menu border-t mt-4 flex flex-col space-y-4 px-2">
+            <a href="index.html" class="text-gray-600 pt-4">Home</a>
+            <a href="about.html" class="text-gray-600">About</a>
+            <a href="services.html" class="text-gray-600">Services</a>
+            <a href="contact.html" class="text-blue-600 font-bold">Contact</a>
         </div>
     </nav>
 
-    <section class="py-16 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-bold uppercase">Connect With Us</h1>
-            <p class="text-gray-500">Get in touch for placement and IT solutions inquiries.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <!-- Form Card -->
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-sm border border-gray-100">
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold mb-1">Your First Name*</label>
-                        <input type="text" placeholder="Enter your first name" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">Your Email Address*</label>
-                        <input type="email" placeholder="Enter your email address" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold mb-1">Your Message*</label>
-                        <textarea placeholder="Type your message here" rows="4" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
-                    </div>
-                    <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">Submit Your Inquiry</button>
-                </form>
+    <section class="py-12 px-6 md:py-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10 md:mb-16">
+                <h1 class="text-3xl md:text-5xl font-bold uppercase tracking-tight">Connect With Us</h1>
+                <p class="text-gray-500 mt-2 text-sm md:text-lg">Get in touch for placement and IT solutions inquiries.</p>
             </div>
 
-            <!-- Office Image -->
-            <div class="rounded-2xl overflow-hidden shadow-lg h-full">
-                <img src="https://via.placeholder.com/600x500?text=OFFICE+INTERIOR" class="w-full h-full object-cover" alt="Our Office">
-            </div>
-        </div>
-    </section>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
+                <div class="bg-gray-50 p-6 md:p-10 rounded-3xl shadow-sm border border-gray-100 order-2 lg:order-1">
+                    <form class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">First Name*</label>
+                                <input type="text" placeholder="John" class="w-full p-4 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Last Name</label>
+                                <input type="text" placeholder="Doe" class="w-full p-4 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Email Address*</label>
+                            <input type="email" placeholder="example@mail.com" class="w-full p-4 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Message*</label>
+                            <textarea placeholder="How can we help you?" rows="5" class="w-full p-4 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition"></textarea>
+                        </div>
+                        <button class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition-all transform active:scale-95 shadow-lg shadow-blue-200">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
 
-    <!-- Location Section -->
-    <section class="py-16 px-6 bg-white max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-                <h2 class="text-3xl font-bold mb-6 uppercase">Our Location</h2>
-                <div class="space-y-4 text-gray-600">
-                    <p><strong>Address:</strong><br>Marigold Shopping Complex, Room no: A2 & A3, Irinjalakuda, Thrissur, Kerala</p>
-                    <p><strong>Hours:</strong><br>Mon-Fri: 9:30 AM - 4:30 PM<br>Sat: 9:30 AM - 1:00 PM</p>
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-64 md:h-auto order-1 lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800" class="w-full h-full object-cover" alt="Our Office">
                 </div>
             </div>
-            <div class="bg-gray-200 h-64 rounded-xl flex items-center justify-center text-gray-400">
-                [Google Map Embed Placeholder]
+        </div>
+    </section>
+
+    <section class="py-12 px-6 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 uppercase tracking-tight">Our Office</h2>
+                <div class="space-y-6 text-gray-600">
+                    <div class="flex items-start justify-center md:justify-start gap-4">
+                        <span class="text-blue-600 font-bold">📍</span>
+                        <p>Marigold Shopping Complex, Room no: A2 & A3,<br>Irinjalakuda, Thrissur, Kerala</p>
+                    </div>
+                    <div class="flex items-start justify-center md:justify-start gap-4">
+                        <span class="text-blue-600 font-bold">⏰</span>
+                        <p>Mon-Fri: 9:30 AM - 4:30 PM<br>Sat: 9:30 AM - 1:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-blue-100 h-64 md:h-80 rounded-3xl border-4 border-white shadow-xl flex items-center justify-center text-blue-400 overflow-hidden relative">
+                 <!-- <img src="https://maps.app.goo.gl/J3SxFDAAg3WDmpcF6" class="w-full h-full object-cover opacity-50" alt="Map"> -->
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15699.533115944967!2d76.19713775120034!3d10.351217044944681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7f63036541cb3%3A0x3860d415b813fd24!2sIrinjalakuda%2C%20Kerala!5e0!3m2!1sen!2sin!4v1775580330880!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                 <!-- <div class="absolute bg-white px-4 py-2 rounded-full shadow-md text-sm font-bold text-blue-600">View on Maps</div> -->
             </div>
         </div>
     </section>
 
-    <!-- Use same Footer as index.html -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden-menu');
+            mobileMenu.classList.toggle('show-menu');
+        });
+    </script>
 </body>
 </html>
